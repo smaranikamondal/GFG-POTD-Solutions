@@ -33,18 +33,14 @@ public class Main {
 class Solution {
     void pushZerosToEnd(int[] arr) {
         // code here
-        int nonZeroIndex = 0;
-
-        for (int i = 0; i < arr.length; i++) {  
-            if (arr[i] != 0) {  
-                arr[nonZeroIndex] = arr[i];  
-                nonZeroIndex++;  
-            }  
-        }  
-
-        while (nonZeroIndex < arr.length) {  
-            arr[nonZeroIndex] = 0;  
-            nonZeroIndex++;  
-        }  
+        int j = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+                j++;
+            }
+        }
     }
 }
